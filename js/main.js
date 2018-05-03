@@ -10,6 +10,8 @@ $(function () {
     //add Event listner on load
     $(document).ready(function () {
         typewrite();
+        smoothScroll();
+
     });
 
 
@@ -17,14 +19,27 @@ $(function () {
     $(window).on('scroll', function () {
         parallax();
         fixedNav();
+        onScroll();
     });
+
+
+
+    /*------------------------------------------------
+      Javascript Function for The Preloader
+    --------------------------------------------------*/
+
+    $(window).on("load", function () {
+        $('.loader-con').fadeOut('slow');
+    });
+
+
 
 
     /*---------------------------------------------------------------------
         Javascript Function For Sticky Navigation Bar AND SMOOTH SCROLLING
     ----------------------------------------------------------------------*/
 
-    //addScrolledClass function
+    //add scrolled class to navigation bar & scroll class to links after scroll from top
     function fixedNav() {
         var navHeight = $('.main-nav').outerHeight();
         var actualPos = $(window).scrollTop();
@@ -34,18 +49,35 @@ $(function () {
         } else {
             $('.main-nav').removeClass('scrolled');
             $('li a').removeClass('scroll');
-        }
-    }
+        };
+    };
 
-    $('a').click(function (e) {
-        e.preventDefault();
-        $('body,html').stop().animate({
-            scrollTop: $(this.hash).offset().top
-        }, 1000);
-    });
+    //smooth scroll after link click
+    function smoothScroll() {
+        $('a').click(function (e) {
+            e.preventDefault();
+            $('body,html').stop().animate({
+                scrollTop: $(this.hash).offset().top
+            }, 1000);
+        });
+    };
 
 
-
+    //add active class to links after scroll from top
+    function onScroll(event) {
+        var scrollPos = $(document).scrollTop();
+        $('.main-nav a').each(function () {
+            var currLink = $(this);
+            var refElement = $(currLink.attr("href"));
+            if (!refElement.length) return;
+            if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+                $('.main-nav a').removeClass("active");
+                currLink.addClass("active");
+            } else {
+                currLink.removeClass("active");
+            };
+        });
+    };
 
     /*---------------------------------------------------
         Javascript Function FOR PARALLAX EFFECT
@@ -72,8 +104,7 @@ $(function () {
                 backgroundObj.css({
                     backgroundPosition: '50% ' + yPos + 'px'
                 });
-            }
-
+            };
         });
     };
 

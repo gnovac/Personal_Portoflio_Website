@@ -103,7 +103,48 @@ img {
     transition: all .4s ease-in-out;
 }
 
-/*Preloader*/
+/*----------------------------------------
+                PRELOADER
+----------------------------------------*/
+
+.loader-con {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fdfdfd;
+    z-index: 99;
+}
+
+.loader-con .spinner {
+    width: 50px;
+    height: 50px;
+}
+
+.double-bounce1,
+.double-bounce2 {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: #333;
+    opacity: 0.6;
+    top: 50%;
+    left: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+    -moz-animation: sk-bounce 2.0s infinite ease-in-out;
+    animation: sk-bounce 2.0s infinite ease-in-out;
+}
+
+.double-bounce2 {
+    -webkit-animation-delay: -1.0s;
+    -moz-animation-delay: -1.0s;
+    animation-delay: -1.0s;
+}
+
 
 /*========================
        NAVIGATION
@@ -129,19 +170,6 @@ nav {
     padding-bottom: 15px;
     padding-top: 15px;
     transition: all .4s ease-in-out;
-}
-
-.main-nav.scrolled {
-    transition: all .4s ease-in-out;
-    background-color: #fff;
-    border-bottom: 1px solid #e4e6ea;
-    padding-top: 5px;
-    padding-bottom: 5px;
-
-}
-
-.main-nav .navbar .scroll {
-    color: #000;
 }
 
 .main-nav .navbar li {
@@ -187,6 +215,24 @@ nav {
 .main-nav .navbar > li > a:focus {
     background-color: transparent;
 }
+
+.main-nav.scrolled {
+    transition: all .4s ease-in-out;
+    background-color: #fff;
+    border-bottom: 1px solid #f0f0f0;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    box-shadow: inset 0 1px 0 rgba(0, 0, 0, .1);
+}
+
+.main-nav .navbar .scroll {
+    color: #000;
+}
+
+.main-nav .navbar .scroll:after {
+    background-color: #000;
+}
+
 
 /*========================
            HOME
@@ -251,7 +297,7 @@ p {
     animation: 1s dash step-end infinite;
 }
 
-.scroll-downs{
+.scroll-downs {
     margin-top: 50px;
 }
 
@@ -282,11 +328,61 @@ p {
     animation-iteration-count: infinite;
 }
 
+/*========================
+           ABOUT
+=========================*/
+
+#about p {
+    margin: 50vh 0;
+}
+
 /*----------------------------------------
 keyframes animation
 ----------------------------------------*/
 
+/* PreLoader Animations*/
+
+@-webkit-keyframes sk-bounce {
+    0%,
+    100% {
+        -webkit-transform: scale(0.0);
+        transform: scale(0.0);
+    }
+    50% {
+        -webkit-transform: scale(1.0);
+        transform: scale(1.0);
+    }
+}
+
+@-moz-keyframes sk-bounce {
+    0%,
+    100% {
+        -moz-transform: scale(0.0);
+        transform: scale(0.0);
+    }
+    50% {
+        -moz-transform: scale(1.0);
+        transform: scale(1.0);
+    }
+}
+
+@keyframes sk-bounce {
+    0%,
+    100% {
+        -webkit-transform: scale(0.0);
+        -moz-transform: scale(0.0);
+        transform: scale(0.0);
+    }
+    50% {
+        -webkit-transform: scale(1.0);
+        -moz-transform: scale(1.0);
+        transform: scale(1.0);
+    }
+}
+
+
 /*typewriter blinking cursor animation*/
+
 @-webkit-keyframes dash {
     0%,
     100% {
@@ -310,6 +406,7 @@ keyframes animation
 
 
 /*mouse wheel scroller animation*/
+
 @-webkit-keyframes scroll {
     0% {
         opacity: 0;
