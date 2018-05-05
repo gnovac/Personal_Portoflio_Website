@@ -9,7 +9,9 @@ $(function () {
 
     //add Event listner on load
     $(document).ready(function () {
-        typewrite();
+        setTimeout(function () {
+            typewrite();
+        }, 2000);
         smoothScroll();
     });
 
