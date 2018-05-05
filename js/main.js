@@ -11,7 +11,7 @@ $(function () {
     $(document).ready(function () {
         setTimeout(function () {
             typewrite();
-        }, 2000);
+        }, 1500);
         smoothScroll();
     });
 
