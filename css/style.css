@@ -149,7 +149,7 @@ img {
     background-color: #444444;
 }
 
-.container{
+.container {
     padding: 50px 200px;
 }
 
@@ -164,8 +164,9 @@ img {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #fdfdfd;
+    background-color: #fafafa;
     z-index: 99;
+
 }
 
 .double-bounce1,
@@ -173,8 +174,8 @@ img {
     position: absolute;
     width: 50px;
     height: 50px;
-    background-color: #333;
-    opacity: 0.6;
+    background-color: #444;
+    opacity: 0.8;
     top: 50%;
     left: 50%;
     border-radius: 50%;
@@ -182,7 +183,10 @@ img {
     animation: sk-bounce 2.0s infinite ease-in-out;
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
+}
 
+.double-bounce2{
+    background-color: #000;
 }
 
 .double-bounce2 {
@@ -347,7 +351,7 @@ p {
 }
 
 .main-header .header-content h1 span {
-    color: #465f91;
+    color: #6699ff;
 }
 
 .main-header .header-content h2 {
@@ -584,6 +588,30 @@ figure .fa {
 .single-service:hover figure .fa {
     -webkit-transform: rotateY(360deg);
     transform: rotateY(360deg);
+}
+
+.single-service:hover figure .fa-html5 {
+    color: #e52626;
+}
+
+.single-service:hover figure .fa-laptop {
+    color: #3a99db;
+}
+
+.single-service:hover figure .fa-mobile {
+    color: #d6ba32;
+}
+
+.single-service:hover figure .fa-picture-o {
+    color: #00d9e2;
+}
+
+.single-service:hover figure .fa-camera-retro {
+    color: #cc6599;
+}
+
+.single-service:hover figure .fa-life-ring {
+    color: #51db3a;
 }
 
 .service-content h3 {

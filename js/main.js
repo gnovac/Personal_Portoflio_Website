@@ -29,11 +29,10 @@ $(function () {
     --------------------------------------------------*/
 
     $(window).on("load", function () {
-        $('.loader-con').fadeOut('slow');
-    });
-
-
-
+        setTimeout(function () {
+            $('.loader-con').fadeOut(800);
+        }, 1200);
+    })
 
     /*---------------------------------------------------------------------
         Javascript Function For Sticky Navigation Bar AND SMOOTH SCROLLING
