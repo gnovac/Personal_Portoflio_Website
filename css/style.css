@@ -106,13 +106,53 @@ img {
     transition: all .4s ease-in-out;
 }
 
-.tags {
+.tag1 {
     display: block;
-    margin: 50px 200px;
+    margin-bottom: 50px;
     font-family: 'La Belle Aurore', cursive;
     font-size: 24px;
     color: #465f91;
 }
+
+.tag2 {
+    display: block;
+    margin-top: 50px;
+    font-family: 'La Belle Aurore', cursive;
+    font-size: 24px;
+    color: #465f91;
+}
+
+.section-title {
+    display: block;
+    width: 100%;
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.section-title h2 {
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    padding-bottom: 15px;
+    font-size: 36px;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.section-title h2:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 43%;
+    width: 60px;
+    height: 2px;
+    background-color: #444444;
+}
+
+.container{
+    padding: 50px 200px;
+}
+
 
 /*----------------------------------------
                 PRELOADER
@@ -142,7 +182,7 @@ img {
     animation: sk-bounce 2.0s infinite ease-in-out;
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
-    
+
 }
 
 .double-bounce2 {
@@ -379,7 +419,7 @@ p {
     align-items: center;
     margin-left: auto;
     margin-right: auto;
-    width: 60%;
+    width: 80%;
     background-color: #fff;
 }
 
@@ -396,7 +436,7 @@ p {
 }
 
 .about-content p {
-    margin-bottom: 16px;
+    margin-bottom: 12px;
 }
 
 .about-content ul li {
@@ -495,6 +535,76 @@ p {
 #skills {
     background-color: #fafafa;
 }
+
+.skills-inner {
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.single-service {
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+.single-service.bordered {
+    border-right: 1px solid #dfdfdf;
+    border-left: 1px solid #dfdfdf;
+}
+
+.services-separator {
+    width: 100%;
+    margin: 15px auto;
+    height: 1px;
+    background: #dfdfdf;
+}
+
+figure .fa {
+    font-size: 44px;
+    line-height: 70px;
+}
+
+.single-service:hover figure .fa {
+    -webkit-transform: rotateY(360deg);
+    transform: rotateY(360deg);
+}
+
+.service-content h3 {
+    font-size: 19px;
+    margin-top: 15px;
+    margin-bottom: 0;
+    font-weight: 700;
+}
+
+.s-line {
+    margin: 12px auto 0;
+    width: 55px;
+    height: 1px;
+    background-color: #333;
+}
+
+.single-service p {
+    margin-top: 12px;
+    font-size: 14px;
+}
+
 
 /*========================
         PORTFOLIO
