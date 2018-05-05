@@ -11,7 +11,6 @@ $(function () {
     $(document).ready(function () {
         typewrite();
         smoothScroll();
-
     });
 
 
@@ -20,6 +19,7 @@ $(function () {
         parallax();
         fixedNav();
         onScroll();
+        progressFunction();
     });
 
 
@@ -41,7 +41,7 @@ $(function () {
 
     //add scrolled class to navigation bar & scroll class to links after scroll from top
     function fixedNav() {
-        var navHeight = $('.main-nav').outerHeight();
+        var navHeight = $('.main-nav').innerHeight();
         var actualPos = $(window).scrollTop();
         if (actualPos >= navHeight) {
             $('.main-nav').addClass('scrolled');
@@ -52,19 +52,24 @@ $(function () {
         };
     };
 
-    //smooth scroll after link click
+    //smooth scroll after link click   
     function smoothScroll() {
-        $('a').click(function (e) {
-            e.preventDefault();
-            $('body,html').stop().animate({
-                scrollTop: $(this.hash).offset().top
-            }, 1000);
+        $("a").on('click', function (event) {
+            if (this.hash !== "") {
+                event.preventDefault();
+                var hash = this.hash;
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 800, function () {
+                    window.location.hash = hash;
+                });
+            };
         });
     };
 
 
     //add active class to links after scroll from top
-    function onScroll(event) {
+    function onScroll() {
         var scrollPos = $(document).scrollTop();
         $('.main-nav a').each(function () {
             var currLink = $(this);
@@ -109,6 +114,42 @@ $(function () {
     };
 
 
+    /*-----------------------------------------------------------------
+      Javascript Function for PROGRESS BAR LINES  SCRIPT
+    ------------------------------------------------------------------*/
+
+    var linesHead = $(".features-section"),
+        line = $(".progress-bar-line");
+
+    //Progress Bars function
+    function progressFunction(e) {
+
+        if (linesHead.length) {
+
+            if (!linesHead.hasClass("done")) {
+
+                var linesHeadTop = linesHead.offset().top,
+                    top = allWindow.scrollTop(),
+                    winH = allWindow.height() - 160;
+
+                if (top >= linesHeadTop - winH) {
+
+                    linesHead.addClass("done");
+                    $.each(line, function (i, val) {
+
+                        var thisLine = $(this),
+                            value = thisLine.data("percent"),
+                            progressCont = $(thisLine).closest('.progress-bar-linear').find(".progress-cont span");
+
+                        thisLine.css("width", value + "%");
+                        progressCont.html(value + "%")
+
+                    });
+                };
+            };
+        };
+    };
+
     /*------------------------------------------
         Javascript for initialize text Typer
     --------------------------------------------*/
@@ -117,7 +158,7 @@ $(function () {
         this.toRotate = toRotate;
         this.el = el;
         this.loopNum = 0;
-        this.period = parseInt(period, 12) || 2000;
+        this.period = parseInt(period, 10) || 2000;
         this.txt = '';
         this.tick();
         this.isDeleting = false;
