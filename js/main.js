@@ -34,7 +34,7 @@ $(function () {
         setTimeout(function () {
             $('.loader-con').fadeOut(800);
         }, 1200);
-    })
+    });
 
     /*---------------------------------------------------------------------
         Javascript Function For Sticky Navigation Bar AND SMOOTH SCROLLING
@@ -47,9 +47,11 @@ $(function () {
         if (actualPos >= navHeight) {
             $('.main-nav').addClass('scrolled');
             $('li a').addClass('scroll');
+            $('.logo').addClass('scroll');
         } else {
             $('.main-nav').removeClass('scrolled');
             $('li a').removeClass('scroll');
+            $('.logo').removeClass('scroll');
         };
     };
 
@@ -67,7 +69,6 @@ $(function () {
             };
         });
     };
-
 
     //add active class to links after scroll from top
     function onScroll() {
