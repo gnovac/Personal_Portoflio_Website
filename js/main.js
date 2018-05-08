@@ -63,12 +63,13 @@ $(function () {
                 var hash = this.hash;
                 $('html, body').animate({
                     scrollTop: $(hash).offset().top
-                }, 800, function () {
+                }, 900, function () {
                     window.location.hash = hash;
                 });
             };
         });
     };
+
 
     //add active class to links after scroll from top
     function onScroll() {
@@ -85,6 +86,14 @@ $(function () {
             };
         });
     };
+
+    //fixed scroll-up button
+    $(".scroll-up").on('click', function (e) {
+        e.preventDefault();
+        $('html, body').stop().animate({
+            scrollTop: 0
+        }, 900);
+    });
 
     /*---------------------------------------------------
         Javascript Function FOR PARALLAX EFFECT
@@ -210,4 +219,72 @@ $(function () {
             }
         }
     }
+
+    /*------------------------------------------------------------------------
+        Javascript Function for Validate
+       -------------------------------------------------------------------------*/
+    // Get the form.
+    var form = $('#contact-form'),
+        reg = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{3,4})$/,
+        inputs = $(".input-field");
+
+    function validateForm() {
+
+        if ($(this).is("#email")) {
+
+            var email = $(this).val(),
+                res = reg.test(email);
+
+            if (res) {
+                $(".email-error").html("");
+            } else {
+                $(".email-error").html("please enter a valid email.");
+                return false;
+            }
+
+        } else {
+
+            var target = ($(this).attr("id")),
+                targetMessage = $("." + target + "-error");
+
+            if ($(this).val() === "") {
+
+                targetMessage.html("please enter a valid " + target + ".");
+                return false;
+
+            } else {
+                targetMessage.html(" ");
+            }
+
+        }
+    } // End ValidateForm Function
+
+    $.each(inputs, function (i, val) {
+        $(this).on("blur", validateForm);
+    });
+    
+    
+    /*-------------------------------------------
+     Javascript for Lightbox options
+    -------------------------------------------*/
+
 });
+
+/*------------------------------------------
+    Javascript for initialize Google Maps
+--------------------------------------------*/
+
+function initMap() {
+    var uluru = {
+        lat: 50.06465009999999,
+        lng: 19.94497990000002
+    };
+    var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 10,
+        center: uluru
+    });
+    var marker = new google.maps.Marker({
+        position: uluru,
+        map: map
+    });
+}
