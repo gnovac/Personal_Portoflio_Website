@@ -399,6 +399,10 @@ p {
     animation: 1s dash step-end infinite;
 }
 
+.scroll-downs {
+    z-index: 100;
+}
+
 .scroll-downs .mousey {
     cursor: pointer;
     width: 3px;
@@ -575,16 +579,13 @@ p {
     width: 75%;
     margin-left: auto;
     margin-right: auto;
-}
-
-.row {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-    -ms-flex-flow: row nowrap;
-    flex-flow: row nowrap;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
@@ -596,7 +597,9 @@ p {
 .single-service {
     padding: 10px;
     text-align: center;
-    width: 100%;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 20%;
+    flex: 1 1 20%;
 }
 
 .single-service.bordered {
@@ -698,6 +701,22 @@ p {
     background-color: #fff;
 }
 
+.portfolio-inner {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
 #portfolio .section-title h2:after {
     left: 42.5%;
 }
@@ -705,6 +724,7 @@ p {
 .filtr-item {
     padding-right: 15px;
     padding-left: 15px;
+    width: 30%;
 }
 
 #work-list {
@@ -815,14 +835,18 @@ p {
     background-color: #fafafa;
 }
 
-.contact-inner {
+#contact .section-title h2:after {
+    left: 44%;
+}
+
+.contact-item {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
+    -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-    -ms-flex-flow: column;
-    flex-flow: column;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
@@ -831,19 +855,14 @@ p {
     align-items: center;
 }
 
-#contact .section-title h2:after {
-    left: 44%;
-}
-
-.contact-item {
-    position: relative;
-    display: inline-block;
-}
-
 .contact-item:after {
     content: "";
     display: table;
     clear: both;
+}
+
+.contact-item .c-data {
+    margin: 0 50px;
 }
 
 .contact-item .c-icon {
@@ -883,11 +902,32 @@ p {
 
 #contact-form {
     margin-top: 50px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: colunbt wrap;
+    flex-flow: row wrap;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+input[type="text"],
+input[type="email"] {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 40%;
+    flex: 1 1 40%;
+}
+
+input,
+textarea {
+    margin: 10px;
 }
 
 .input-field {
-    width: 100%;
-    padding: 8px 16px;
+    padding: 12px 16px;
     color: #232323;
     border: 1px solid #ddd;
     outline: none;
@@ -896,6 +936,7 @@ p {
 textarea.input-field {
     height: 190px;
     resize: none;
+    width: 100%;
 }
 
 .name-error,
@@ -906,6 +947,8 @@ textarea.input-field {
     margin-top: 8px;
     font-size: 14px;
     color: #ff2828;
+    margin-bottom: 30px;
+    text-align: center;
 }
 
 .success {
