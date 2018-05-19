@@ -42,7 +42,7 @@
   // http://lokeshdhakar.com/projects/lightbox2/index.html#options
   Lightbox.defaults = {
     albumLabel: 'Image %1 of %2',
-    alwaysShowNavOnTouchDevices: false,
+    alwaysShowNavOnTouchDevices: true,
     fadeDuration: 600,
     fitImagesInViewport: true,
     imageFadeDuration: 600,
@@ -388,7 +388,7 @@
     // Check to see if the browser supports touch events. If so, we take the conservative approach
     // and assume that mouse hover events are not supported and always show prev/next navigation
     // arrows in image sets.
-    var alwaysShowNav = false;
+    var alwaysShowNav = true;
     try {
       document.createEvent('TouchEvent');
       alwaysShowNav = (this.options.alwaysShowNavOnTouchDevices) ? true : false;

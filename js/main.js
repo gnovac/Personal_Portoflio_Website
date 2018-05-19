@@ -13,6 +13,7 @@ $(function () {
             typewrite();
         }, 1500);
         smoothScroll();
+        responsiveMenu();
     });
 
 
@@ -26,6 +27,7 @@ $(function () {
 
 
 
+
     /*------------------------------------------------
       Javascript Function for The Preloader
     --------------------------------------------------*/
@@ -36,32 +38,128 @@ $(function () {
         }, 1200);
     });
 
+    /*-----------------------------------------------------
+      Javascript Function To check Aniamtion support
+    -------------------------------------------------------*/
+
+    var animation = false,
+        animationstring = 'animation',
+        keyframeprefix = '',
+        domPrefixes = 'Webkit Moz O ms Khtml'.split(' '),
+        pfx = '',
+        elm = document.createElement('div');
+
+    if (elm.style.animationName !== undefined) {
+        animation = true;
+    }
+
+    if (animation === false) {
+        for (var i = 0; i < domPrefixes.length; i++) {
+            if (elm.style[domPrefixes[i] + 'AnimationName'] !== undefined) {
+                pfx = domPrefixes[i];
+                animationstring = pfx + 'Animation';
+                keyframeprefix = '-' + pfx.toLowerCase() + '-';
+                animation = true;
+                break;
+            }
+        }
+    }
+
+
+
+    /*-----------------------------------------------------
+      Javascript Function For Slow Smooth Mouse Scrolling
+    -------------------------------------------------------*/
+
+    jQuery.scrollSpeed = function (step, speed) {
+
+        var $document = $(document),
+            $body = $('html, body'),
+            option = 'default',
+            root = top,
+            scroll = false,
+            scrollY,
+            view;
+
+        if (window.navigator.msPointerEnabled) {
+            return false;
+        }
+
+        allWindow.on('mousewheel DOMMouseScroll', function (e) {
+
+            var deltaY = e.originalEvent.wheelDeltaY,
+                detail = e.originalEvent.detail;
+            scrollY = $document.height() > allWindow.height();
+            scroll = true;
+
+            if (scrollY) {
+
+                view = allWindow.height();
+
+                if (deltaY < 0 || detail > 0) {
+                    root = (root + view) >= $document.height() ? root : root += step;
+                }
+
+                if (deltaY > 0 || detail < 0) {
+                    root = root <= 0 ? 0 : root -= step;
+                }
+
+                $body.stop().animate({
+                    scrollTop: root
+                }, speed, option, function () {
+                    scroll = false;
+                });
+            }
+
+            return false;
+
+        }).on('scroll', function () {
+
+            if (scrollY && !scroll) root = top;
+            if (!scroll) root = allWindow.scrollTop();
+
+        }).on('resize', function () {
+
+            if (scrollY && !scroll) view = allWindow.height();
+
+        });
+    };
+
+    jQuery.easing.default = function (x, t, b, c, d) {
+        return -c * ((t = t / d - 1) * t * t * t - 1) + b;
+    };
+
+    // initialize Smooth Scrolling Only in Modern browsers
+    if (animation) {
+        jQuery.scrollSpeed(100, 700);
+    }
+
+
+
     /*---------------------------------------------------------------------
         Javascript Function For Sticky Navigation Bar AND SMOOTH SCROLLING
     ----------------------------------------------------------------------*/
 
-    //add scrolled class to navigation bar & scroll class to links after scroll from top
+    //  add scrolled class to navigation bar & scroll class to links after scroll from top
     function fixedNav() {
         var navHeight = $('.main-nav').innerHeight();
         var actualPos = $(window).scrollTop();
         if (actualPos >= navHeight) {
             $('.main-nav').addClass('scrolled');
-            $('li a').addClass('scroll');
-            $('.logo').addClass('scroll');
+            $('li a, .logo, .nav-container').addClass('scroll');
         } else {
             $('.main-nav').removeClass('scrolled');
-            $('li a').removeClass('scroll');
-            $('.logo').removeClass('scroll');
+            $('li a, .logo, .nav-container').removeClass('scroll');
         };
     };
 
-    //smooth scroll after link click   
+    //  smooth scroll after link click   
     function smoothScroll() {
         $("a").on('click', function (event) {
             if (this.hash !== "") {
                 event.preventDefault();
                 var hash = this.hash;
-                $('html, body').animate({
+                $('html, body').stop().animate({
                     scrollTop: $(hash).offset().top
                 }, 900, function () {
                     window.location.hash = hash;
@@ -71,7 +169,7 @@ $(function () {
     };
 
 
-    //add active class to links after scroll from top
+    //  add active class to links after scroll from top
     function onScroll() {
         var scrollPos = $(document).scrollTop();
         $('.main-nav a').each(function () {
@@ -87,13 +185,42 @@ $(function () {
         });
     };
 
-    //fixed scroll-up button
+
+    //  javascript for mobile devices navigation
+    function responsiveMenu() {
+        $('.nav-container').on('click', function () {
+            if (!$(this).hasClass('change')) {
+                $(this).addClass('change');
+                $(".navbar").slideToggle(function () {
+                    $(this).css('display', 'block');
+                });
+            } else {
+                $(this).removeClass('change');
+                $(".navbar").slideToggle(function () {
+                    $(this).css('display', '');
+                });
+            }
+        });
+
+        $('a').on('click', function () {
+            $('.nav-container').removeClass('change');
+            //smooth hide drop down navigation menu
+            if ($(window).width() < 922) {
+                $(".navbar").slideUp(function () {
+                    $(this).css('display', '');
+                });
+            }
+        })
+    };
+
+    //  fixed scroll-up button
     $(".scroll-up").on('click', function (e) {
         e.preventDefault();
         $('html, body').stop().animate({
             scrollTop: 0
         }, 900);
     });
+
 
     /*---------------------------------------------------
         Javascript Function FOR PARALLAX EFFECT
@@ -132,7 +259,7 @@ $(function () {
     var linesHead = $(".features-section"),
         line = $(".progress-bar-line");
 
-    //Progress Bars function
+    //  Progress Bars function
     function progressFunction(e) {
 
         if (linesHead.length) {
@@ -262,12 +389,6 @@ $(function () {
     $.each(inputs, function (i, val) {
         $(this).on("blur", validateForm);
     });
-    
-    
-    /*-------------------------------------------
-     Javascript for Lightbox options
-    -------------------------------------------*/
-
 });
 
 /*------------------------------------------

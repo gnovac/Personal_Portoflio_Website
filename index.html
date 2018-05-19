@@ -31,15 +31,15 @@
 
     <!--NAVIGATION BAR-->
     <nav class="main-nav">
-        <div class="logo"><a href="#home"><i class="fa fa-hashtag logo" aria-hidden="true"><span>GN</span></i></a></div>
+        <div class="logo"><a href="index.html"><i class="fa fa-hashtag logo" aria-hidden="true"><span>GN</span></i></a></div>
         <!--       Toogle class for mobile version-->
-        <div class="menu-section">
-            <div class="menu-toggle">
-                <div class="one"></div>
-                <div class="two"></div>
-                <div class="three"></div>
+        <label class="toggle">
+            <div class="nav-container">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
             </div>
-        </div>
+        </label>
 
         <!--        navigation links-->
         <ul class="navbar">
@@ -148,7 +148,7 @@
             </div>
             <span class="tag1">&lt;skills&gt;</span>
             <div class="skills-inner">
-                <div class="single-service">
+                <div class="single-service html5-box">
                     <figure>
                         <i class="fa icon-html5-alt effect"></i>
                         <figcaption class="service-content">
@@ -158,7 +158,7 @@
                     </figure>
                 </div>
 
-                <div class="single-service bordered">
+                <div class="single-service css3-box">
                     <figure>
                         <i class="fa icon-css3-alt effect"></i>
                         <figcaption class="service-content">
@@ -168,7 +168,7 @@
                     </figure>
                 </div>
 
-                <div class="single-service bordered-right">
+                <div class="single-service javascript-box">
                     <figure>
                         <i class="fa icon-javascript-alt effect"></i>
                         <figcaption class="service-content">
@@ -178,7 +178,7 @@
                     </figure>
                 </div>
 
-                <div class="single-service">
+                <div class="single-service github-box">
                     <figure>
                         <i class="fa fa-github effect"></i>
                         <figcaption class="service-content">
@@ -188,7 +188,7 @@
                     </figure>
                 </div>
                 <div class="services-separator"></div>
-                <div class="single-service">
+                <div class="single-service jquery-box">
                     <figure>
                         <i class="fa icon-jquery effect"></i>
                         <figcaption class="service-content">
@@ -198,7 +198,7 @@
                     </figure>
                 </div>
 
-                <div class="single-service bordered">
+                <div class="single-service bootstrap-box">
                     <figure>
                         <i class="fa icon-bootstrap effect"></i>
                         <figcaption class="service-content">
@@ -208,7 +208,7 @@
                     </figure>
                 </div>
 
-                <div class="single-service bordered-right">
+                <div class="single-service sass-box">
                     <figure>
                         <i class="fa icon-sass effect"></i>
                         <figcaption class="service-content">
@@ -218,7 +218,7 @@
                     </figure>
                 </div>
 
-                <div class="single-service">
+                <div class="single-service wordpress-box">
                     <figure>
                         <i class="fa icon-wordpress effect"></i>
                         <figcaption class="service-content">
@@ -354,16 +354,20 @@
                 </div>
 
                 <form id="contact-form" method="post" action="https://formspree.io/grzesiek6493@gmail.com">
+                    <div class="c-name">
+                        <input type="text" name="Nazwa" id="name" class="input-field" required="required" placeholder="Nazwa">
+                        <span class="name-error"></span>
+                    </div>
+                    <div class="c-email">
+                        <input type="email" name="Adres email" id="email" class="input-field" required="required" placeholder="Email">
+                        <span class="email-error"></span>
+                    </div>
+                    <div class="c-msg">
+                        <textarea name="Wiadomość" id="message" class="input-field" required="required" placeholder="Wiadomość"></textarea>
+                        <span class="message-error"></span>
+                    </div>
 
-                    <input type="text" name="name" id="name" class="input-field" required="required" placeholder="Nazwa">
-                    <span class="name-error text-center"></span>
-                    <input type="email" name="email" id="email" class="input-field" required="required" placeholder="Email">
-                    <span class="email-error text-center"></span>
-
-                    <textarea name="message" id="message" class="input-field" required="required" placeholder="Wiadomość"></textarea>
-                    <span class="message-error text-center"></span>
-                    <div id="form-message" class="error text-center"></div>
-
+                    <div id="form-message" class="error"></div>
                     <button type="submit" class="effect submit-btn">Wyślij</button>
                 </form>
             </div>

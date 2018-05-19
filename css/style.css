@@ -17,6 +17,7 @@ body {
     letter-spacing: 1px;
     background-color: #fff;
     color: #484848;
+    overflow: hidden;
 }
 
 h1,
@@ -149,7 +150,7 @@ img {
 }
 
 .container {
-    padding: 100px 200px;
+    padding: 100px 75px;
 }
 
 
@@ -158,11 +159,20 @@ img {
 ----------------------------------------*/
 
 .loader-con {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
     position: fixed;
+    z-index: 100;
+    width: 100vw;
+    height: 100vh;
     top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
     background-color: #fafafa;
     z-index: 99;
 
@@ -304,6 +314,83 @@ nav {
     color: #000;
 }
 
+/*****button in right corner to scroll up page*****/
+
+.scroll-up {
+    position: fixed;
+    font-size: 28px;
+    width: 46px;
+    height: 46px;
+    text-align: center;
+    line-height: 38px;
+    color: #fafafa;
+    border: 2px solid #333;
+    background-color: #333;
+    bottom: 25px;
+    right: 30px;
+    opacity: 0;
+    z-index: 60;
+}
+
+.scroll-up:focus {
+    color: #fff;
+}
+
+.scroll-up:hover {
+    background-color: transparent;
+    color: #333;
+}
+
+.show-up-btn {
+    opacity: 1;
+}
+
+/********MOBILE MENU********/
+
+.nav-container {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.nav-container .bar1,
+.nav-container .bar2,
+.nav-container .bar3 {
+    width: 30px;
+    height: 3px;
+    border-radius: 1px;
+    background-color: #fff;
+    margin: 6px 0;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+
+.scroll .bar1,
+.scroll .bar2,
+.scroll .bar3 {
+    background-color: #000;
+}
+
+
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 5px);
+    transform: rotate(-45deg) translate(-9px, 5px);
+}
+
+.change .bar2 {
+    opacity: 0;
+}
+
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -3px);
+    transform: rotate(45deg) translate(-8px, -3px);
+}
+
+/*checkbox for responsive navbar*/
+
+.main-nav .toggle {
+    display: none;
+}
+
 /*========================
            HOME
 =========================*/
@@ -314,8 +401,8 @@ nav {
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-    -ms-flex-flow: column wrap;
-    flex-flow: column wrap;
+    -ms-flex-flow: column;
+    flex-flow: column;
     -webkit-box-pack: space-evenly;
     -ms-flex-pack: space-evenly;
     justify-content: space-evenly;
@@ -358,7 +445,7 @@ nav {
     -ms-flex-align: center;
     align-items: center;
     z-index: 10;
-    padding-top: 20vh;
+    padding: 15vh 0;
 }
 
 .main-header .header-content h1,
@@ -371,6 +458,7 @@ p {
     color: #fff;
     font-size: 50px;
     margin: 36px 0 22px;
+    text-align: center;
 }
 
 .main-header .header-content h1 span {
@@ -382,6 +470,7 @@ p {
     color: #e2e2e2;
     text-transform: uppercase;
     margin: 10px 0;
+    text-align: center;
 }
 
 .avatar-hero img {
@@ -400,14 +489,15 @@ p {
 }
 
 .scroll-downs {
-    z-index: 100;
+    z-index: 50;
+    margin: 5px;
 }
 
 .scroll-downs .mousey {
     cursor: pointer;
     width: 3px;
-    padding: 10px 15px;
-    height: 35px;
+    padding: 5px 10px;
+    height: 28px;
     border: 2px solid #fff;
     border-radius: 25px;
     opacity: 0.75;
@@ -417,8 +507,8 @@ p {
 
 .scroll-downs .mousey .scroller {
     width: 3px;
-    height: 10px;
-    border-radius: 25%;
+    height: 5px;
+    border-radius: 50%;
     background-color: #fff;
     -webkit-animation-name: scroll;
     animation-name: scroll;
@@ -572,11 +662,11 @@ p {
 }
 
 #skills .section-title h2:after {
-    left: 43.5%;
+    left: 44%;
 }
 
 .skills-inner {
-    width: 75%;
+    width: 85%;
     margin-left: auto;
     margin-right: auto;
     display: -webkit-box;
@@ -602,12 +692,14 @@ p {
     flex: 1 1 20%;
 }
 
-.single-service.bordered {
+.single-service.css3-box,
+.single-service.bootstrap-box {
     border-right: 1px solid #dfdfdf;
     border-left: 1px solid #dfdfdf;
 }
 
-.single-service.bordered-right {
+.single-service.javascript-box,
+.single-service.sass-box {
     border-right: 1px solid #dfdfdf;
 }
 
@@ -619,9 +711,9 @@ p {
 }
 
 .single-service figure .fa {
-    font-size: 50px;
+    font-size: 70px;
     line-height: 70px;
-    width: 41px;
+    width: 61px;
 }
 
 .single-service:hover figure .fa {
@@ -718,7 +810,7 @@ p {
 }
 
 #portfolio .section-title h2:after {
-    left: 42.5%;
+    left: 43%;
 }
 
 .filtr-item {
@@ -836,7 +928,7 @@ p {
 }
 
 #contact .section-title h2:after {
-    left: 44%;
+    left: 46%;
 }
 
 .contact-item {
@@ -914,16 +1006,34 @@ p {
     margin-right: auto;
 }
 
-input[type="text"],
-input[type="email"] {
+.c-name,
+.c-email,
+.c-msg {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: column;
+    flex-flow: column;
+}
+
+.c-name,
+.c-email {
     -webkit-box-flex: 1;
     -ms-flex: 1 1 40%;
     flex: 1 1 40%;
 }
 
+.c-msg {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 100%;
+    flex: 1 1 100%;
+}
+
 input,
 textarea {
-    margin: 10px;
+    margin: 0 10px;
 }
 
 .input-field {
@@ -936,7 +1046,6 @@ textarea {
 textarea.input-field {
     height: 190px;
     resize: none;
-    width: 100%;
 }
 
 .name-error,
@@ -1000,8 +1109,8 @@ textarea.input-field {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding-top: 40px;
+    padding-bottom: 40px;
     text-align: center;
     background-color: #f1f1f1;
 }
@@ -1024,7 +1133,7 @@ textarea.input-field {
 }
 
 .footer-social-list li a {
-    font-size: 17px;
+    font-size: 25px;
     color: #434343;
     margin: 0 9px;
 }
@@ -1039,37 +1148,6 @@ textarea.input-field {
     text-transform: capitalize;
     text-align: center;
 }
-
-.scroll-up {
-    position: fixed;
-    font-size: 28px;
-    width: 46px;
-    height: 46px;
-    text-align: center;
-    line-height: 38px;
-    color: #fafafa;
-    border: 2px solid #333;
-    background-color: #333;
-    bottom: 25px;
-    right: 30px;
-    opacity: 0;
-    z-index: 60;
-}
-
-.scroll-up:focus {
-    color: #fff;
-}
-
-.scroll-up:hover {
-    background-color: transparent;
-    color: #333;
-}
-
-.show-up-btn {
-    opacity: 1;
-}
-
-
 
 
 /*----------------------------------------
