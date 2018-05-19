@@ -174,7 +174,6 @@ img {
     top: 0;
     background-color: #fafafa;
     z-index: 99;
-
 }
 
 .double-bounce1,
@@ -184,13 +183,9 @@ img {
     height: 50px;
     background-color: #444;
     opacity: 0.8;
-    top: 50%;
-    left: 50%;
     border-radius: 50%;
     -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
     animation: sk-bounce 2.0s infinite ease-in-out;
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%);
 }
 
 .double-bounce2 {
