@@ -32,12 +32,13 @@ $(function () {
       Javascript Function for The Preloader
     --------------------------------------------------*/
 
-    $(window).on("load", function () {
-        setTimeout(function () {
-            $('.loader-con').fadeOut(800);
-        }, 1200);
+    const preLoader = document.querySelector('.loader-con');
+    preLoader.classList.add('show-preloader');
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            preLoader.classList.remove('show-preloader')
+        }, 1500)
     });
-
     /*-----------------------------------------------------
       Javascript Function To check Aniamtion support
     -------------------------------------------------------*/
