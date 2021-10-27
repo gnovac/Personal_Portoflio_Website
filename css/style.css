@@ -414,6 +414,7 @@ nav {
     background-image: url(../img/header-bg.jpg);
     background-position: center;
     background-size: cover;
+    background-attachment: fixed;
     width: 100%;
     height: 100%;
     color: #fff;
@@ -634,7 +635,7 @@ p {
 
 .progress-cont {
     display: inline-block;
-    float: right;
+    /* float: right; */
     margin-right: 10px;
 }
 
@@ -712,26 +713,25 @@ p {
     background: #dfdfdf;
 }
 
-.single-service figure .fa {
+.single-service figure .fab {
     font-size: 70px;
     line-height: 70px;
-    width: 61px;
+    transition: transform 1s, color .5s;
 }
 
-.single-service:hover figure .fa {
-    -webkit-transform: rotateY(360deg);
+.single-service:hover figure .fab {
     transform: rotateY(360deg);
 }
 
-.single-service:hover figure .icon-html5-alt {
+.single-service:hover figure .fa-html5 {
     color: #e52626;
 }
 
-.single-service:hover figure .icon-css3-alt {
+.single-service:hover figure .fa-css3-alt {
     color: #3a99db;
 }
 
-.single-service:hover figure .icon-javascript-alt {
+.single-service:hover figure .fa-js-square {
     color: #d6ba32;
 }
 
@@ -739,31 +739,20 @@ p {
     color: #58297b;
 }
 
-.single-service figure .icon-jquery {
-    width: auto;
-}
 
-.single-service:hover figure .icon-jquery {
+.single-service:hover figure .fa-node-js {
     color: #1169ae;
 }
 
-.single-service figure .icon-bootstrap {
-    width: auto;
-}
-
-.single-service:hover figure .icon-bootstrap {
+.single-service:hover figure .fa-bootstrap {
     color: #542748;
 }
 
-.single-service:hover figure .icon-sass {
+.single-service:hover figure .fa-sass {
     color: #cc6599;
 }
 
-.single-service figure .icon-wordpress {
-    width: auto;
-}
-
-.single-service:hover figure .icon-wordpress {
+.single-service:hover figure .fa-gulp {
     color: #00759d;
 }
 
@@ -964,7 +953,7 @@ p {
     top: 6px;
     width: 60px;
     height: 60px;
-    float: left;
+    /* float: left; */
     background-color: #232323;
     border-radius: 50%;
     text-align: center;
@@ -1070,7 +1059,7 @@ textarea.input-field {
 }
 
 #form-message {
-    float: left;
+    /* float: left; */
     width: 100%;
 }
 

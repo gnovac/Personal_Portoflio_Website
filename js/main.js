@@ -3,7 +3,6 @@ $(function () {
 
     // Define Some Elements
     var allWindow = $(window),
-        body = $('body'),
         top = $(window).scrollTop();
 
 
@@ -19,7 +18,6 @@ $(function () {
 
     // add Event listener on scroll
     $(window).on('scroll', function () {
-        parallax();
         fixedNav();
         onScroll();
         progressFunction();
@@ -222,35 +220,6 @@ $(function () {
         }, 900);
     });
 
-
-    /*---------------------------------------------------
-        Javascript Function FOR PARALLAX EFFECT
-    ---------------------------------------------------*/
-
-    // create variables
-    var backgrounds = $('.parallax');
-
-    function parallax() {
-
-        // for each of background parallax element
-        $.each(backgrounds, function (i, val) {
-
-            var backgroundObj = $(this),
-                backgroundObjTop = backgroundObj.offset().top,
-                backgroundHeight = backgroundObj.height();
-
-            // update positions
-            top = allWindow.scrollTop();
-
-            var yPos = ((top - backgroundObjTop)) / 2;
-
-            if (yPos <= backgroundHeight + backgroundObjTop) {
-                backgroundObj.css({
-                    backgroundPosition: '50% ' + yPos + 'px'
-                });
-            };
-        });
-    };
 
 
     /*-----------------------------------------------------------------
