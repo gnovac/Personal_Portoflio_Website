@@ -139,11 +139,10 @@ img {
     text-transform: capitalize;
 }
 
-.section-title h2:after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    width: 60px;
+.underline {
+    margin: 0 auto;
+    margin-bottom: 40px;
+    width: 100px;
     height: 2px;
     background-color: #465f91;
 }
@@ -635,7 +634,6 @@ p {
 
 .progress-cont {
     display: inline-block;
-    /* float: right; */
     margin-right: 10px;
 }
 
@@ -953,7 +951,7 @@ p {
     top: 6px;
     width: 60px;
     height: 60px;
-    /* float: left; */
+    float: left;
     background-color: #232323;
     border-radius: 50%;
     text-align: center;
@@ -1059,7 +1057,6 @@ textarea.input-field {
 }
 
 #form-message {
-    /* float: left; */
     width: 100%;
 }
 
