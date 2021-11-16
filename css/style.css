@@ -782,74 +782,58 @@ p {
     background-color: #fff;
 }
 
-.portfolio-inner {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-flow: row wrap;
-    flex-flow: row wrap;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-}
-
 #portfolio .section-title h2:after {
     left: 43%;
 }
 
-.filtr-item {
-    padding-right: 15px;
-    padding-left: 15px;
-    width: 30%;
+.carousel {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
-#work-list {
-    margin-bottom: 40px;
+.slick-arrow {
+    margin: 10px;
+    cursor: pointer;
+    background: none;
+    border: none;
 }
 
-#work-list li {
-    display: inline-block;
-    text-transform: uppercase;
-    font-size: 14px;
-    font-weight: 700;
+.slick-arrow i {
+    font-size: 2.5em;
+    transition: color .2s;
 }
 
-#work-list li .filter {
+.slick-arrow:hover i {
+    color: #333;
+}
+
+
+.carousel-item {
+    margin: 0 10px;
     position: relative;
-    margin: 4px 8px;
-}
-
-#work-list li .filter:after {
-    content: '';
-    position: absolute;
-    bottom: calc(50% - 1px);
-    left: 0;
-    width: 0;
-    height: 1px;
-    background-color: #484848;
-    -webkit-transition: width .24s ease-out;
-    transition: width .24s ease-out;
-}
-
-#work-list li .filter:hover:after,
-#work-list li .filter-active:after {
-    width: 100%;
+    overflow: hidden;
+    cursor: pointer;
 }
 
 .single-work {
     position: relative;
     overflow: hidden;
     margin-bottom: 30px;
+    cursor: pointer;
+}
+
+.single-work a {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
 }
 
 .single-work img {
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
+    width: 100%;
 }
 
 .single-work:hover img {
@@ -866,6 +850,7 @@ p {
     left: 8px;
     opacity: 0;
     background-color: rgba(0, 0, 0, 0.8);
+    z-index: 10;
 }
 
 .work-overlay:after {
@@ -898,7 +883,6 @@ p {
     left: 26px;
     bottom: 10px;
 }
-
 
 
 
