@@ -63,7 +63,7 @@
         border-right: none;
     }
 
-    
+
     #contact-form {
         width: 80%;
     }
@@ -80,29 +80,47 @@
         background-color: transparent;
         border: 1px solid transparent;
         border-radius: 4px;
+        z-index: 20;
     }
 
-    .main-nav ul {
-        width: 100%;
-        margin: 0;
-        padding: 0;
-        display: none;
-        text-align: left;
-    }
-
-    .main-nav .navbar li {
-        display: block;
+    .navbar {
+        min-width: 100%;
+        min-height: 100%;
+        position: fixed;
+        top: 0;
+        height: 0;
+        visibility: hidden;
+        opacity: 0;
         text-align: center;
+        padding-top: 20px;
+        z-index: 10;
+        transition: all 0.3s ease-in-out;
     }
 
-    .main-nav .navbar li a:after {
-        left: 45%;
+    .navbar.overlay {
+        visibility: visible;
+        opacity: 1;
+        padding-top: 100px;
+        background: rgba(0, 0, 0, 0.9);
     }
 
-    .main-nav .navbar > li > a:hover:after,
-    .main-nav .navbar > li > a.active:after {
-        width: 10%;
+    .navbar li {
+        list-style: none;
+        display: block;
     }
+
+    .navbar li a {
+        display: block;
+        font-size: 28px;
+        margin-bottom: 15px;
+        text-decoration: none;
+    }
+
+    .nav-links {
+        color: white;
+    }
+
+    /* ------------------------- */
 
     .avatar-hero img {
         width: 130px;
@@ -204,8 +222,8 @@
         left: 40%;
     }
 
-    .main-nav .navbar > li > a:hover:after,
-    .main-nav .navbar > li > a.active:after {
+    .main-nav .navbar>li>a:hover:after,
+    .main-nav .navbar>li>a.active:after {
         width: 20%;
     }
 

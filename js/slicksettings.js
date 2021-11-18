@@ -1,23 +1,22 @@
 $('.carousel').slick({
+    arrows: false,
+    dots: true,
     slidesToShow: 3,
+    slidesToScroll: 1,
     autoplay: true,
-    arrows: true,
-    prevArrow: '<button type = "button" class = "slick-prev" > <i class="fas fa-arrow-circle-left"></i> </button>',
-    nextArrow: '<button type = "button" class = "slick-next" > <i class="fas fa-arrow-circle-right"></i></button>',
     autoplaySpeed: 2000,
     mobileFirst: true,
-    responsive: [
-        {
+    responsive: [{
             breakpoint: 0,
             settings: {
-                arrows: false,
+                dost: false,
                 slidesToShow: 1,
             }
         },
         {
             breakpoint: 576,
             settings: {
-                arrows: false,
+                dots: false,
                 slidesToShow: 2,
             }
         },

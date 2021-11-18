@@ -1,108 +1,55 @@
 "use strict";
 
-/*------------------------------------------------
-Javascript Function for The Preloader
---------------------------------------------------*/
-const preLoader = document.querySelector('.loader-con');
-preLoader.classList.add('show-preloader');
-window.addEventListener('load', () => {
-    setTimeout(() => {
-        preLoader.classList.remove('show-preloader')
-    }, 1500)
-});
+document.addEventListener('DOMContentLoaded', () => {
+    const nav = document.querySelector('.main-nav');
+    const navbar = document.querySelector('.navbar');
+    const logo = document.querySelector('.logo span');
+    const navLinks = document.querySelectorAll('.nav-links li');
+    const sections = document.querySelectorAll('.forJS');
+    const burgerIcon = document.querySelector('.toggle');
+    const burgerBars = document.querySelectorAll('.bars')
 
-
-//add Event listner on load
-$(document).ready(function () {
-    smoothScroll();
-    responsiveMenu();
-});
-
-/*---------------------------------------------------------------------
-    Javascript Function For Sticky Navigation Bar AND SMOOTH SCROLLING
-----------------------------------------------------------------------*/
-
-//  add scrolled class to navigation bar & scroll class to links after scroll from top
-function fixedNav() {
-    const navHeight = $('.main-nav').innerHeight();
-    const actualPos = $(window).scrollTop();
-    if (actualPos >= navHeight) {
-        $('.main-nav').addClass('scrolled');
-        $('li a, .logo, .nav-container').addClass('scroll');
-    } else {
-        $('.main-nav').removeClass('scrolled');
-        $('li a, .logo, .nav-container').removeClass('scroll');
-    };
-};
-
-//  smooth scroll after link click   
-function smoothScroll() {
-    $("a").on('click', function (e) {
-        if (this.hash !== "") {
-            e.preventDefault();
-            const hash = this.hash;
-            $('html, body').stop().animate({
-                scrollTop: $(hash).offset().top
-            }, 500, function () {
-                window.location.hash = hash;
-            });
-        };
-    });
-};
-
-
-//  add active class to links after scroll from top
-function onScroll() {
-    const scrollPos = $(document).scrollTop();
-    $('.main-nav a').each(function () {
-        let currLink = $(this);
-        let refElement = $(currLink.attr("href"));
-        if (!refElement.length) return;
-        if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
-            $('.main-nav a').removeClass("active");
-            currLink.addClass("active");
+    const addShadow = () => {
+        if (window.scrollY >= 300) {
+            nav.classList.add('scrolled');
+            navbar.classList.add('scroll');
+            logo.style.color = '#000'
+            burgerBars.forEach(bar => bar.classList.add('scroll-bar'));
         } else {
-            currLink.removeClass("active");
-        };
-    });
-};
+            nav.classList.remove('scrolled');
+            navbar.classList.remove('scroll');
+            logo.style.color = '#fff';
+            burgerBars.forEach(bar => bar.classList.remove('scroll-bar'));
+        }
+    }
 
+    const changeLinkState = () => {
+        let index = sections.length;
+        while (--index && window.scrollY + 50 < sections[index].offsetTop) {}
+        navLinks.forEach((link) => link.classList.remove('active'));
+        navLinks[index].classList.add('active');
+    }
 
-//  javascript for mobile devices navigation
-function responsiveMenu() {
-    $('.nav-container').on('click', function () {
-        if (!$(this).hasClass('change')) {
-            $(this).addClass('change');
-            $(".navbar").slideToggle(function () {
-                $(this).css('display', 'block');
-            });
+    burgerIcon.addEventListener('click', function () {
+        this.classList.toggle("change");
+        navbar.classList.toggle("overlay");
+        if (burgerIcon.classList.contains('change') || !nav.classList.contains('scrolled')) {
+            burgerBars.forEach(bar => bar.classList.remove('scroll-bar'));
         } else {
-            $(this).removeClass('change');
-            $(".navbar").slideToggle(function () {
-                $(this).css('display', '');
-            });
+            burgerBars.forEach(bar => bar.classList.add('scroll-bar'));
         }
     });
 
-    $('a').on('click', function () {
-        $('.nav-container').removeClass('change');
-        //smooth hide drop down navigation menu
-        if ($(window).width() < 922) {
-            $(".navbar").slideUp(function () {
-                $(this).css('display', '');
-            });
-        }
-    })
-};
+    navLinks.forEach(item => {
+        item.addEventListener('click', () => {
+            burgerIcon.classList.toggle("change");
+            navbar.classList.toggle("overlay");
+        });
+    });
 
-//  fixed scroll-up button
-$(".scroll-up").on('click', function (e) {
-    e.preventDefault();
-    $('html, body').stop().animate({
-        scrollTop: 0
-    }, 500);
-});
-
+    window.addEventListener('scroll', changeLinkState);
+    window.addEventListener('scroll', addShadow);
+})
 
 /*------------------------------------------------------------------------
     Javascript Function for Validate
@@ -141,15 +88,8 @@ function validateForm() {
         }
 
     }
-} 
+}
 
 $.each(inputs, function (i, val) {
     $(this).on("blur", validateForm);
-});
-
-//----------------------------------------------------//
-
-$(window).on('scroll', function () {
-    fixedNav();
-    onScroll();
 });

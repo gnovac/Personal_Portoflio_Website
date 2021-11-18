@@ -21,39 +21,37 @@
 </head>
 
 <body>
-    <!--LOADER -->
-    <div class="loader-con">
-        <div class="double-bounce1"></div>
-        <div class="double-bounce2"></div>
-    </div>
-    <!--END LOADER-->
-
     <!--NAVIGATION BAR-->
     <nav class="main-nav">
         <div class="logo"><a href="index.html"><i class="fa fa-hashtag logo" aria-hidden="true"><span>GN</span></i></a>
         </div>
+
         <!--       Toogle class for mobile version-->
-        <label class="toggle">
+        <div class="toggle">
             <div class="nav-container">
-                <div class="bar1"></div>
-                <div class="bar2"></div>
-                <div class="bar3"></div>
+                <div class="bars bar1"></div>
+                <div class="bars bar2"></div>
+                <div class="bars bar3"></div>
             </div>
-        </label>
+        </div>
 
         <!--        navigation links-->
-        <ul class="navbar">
-            <li><a href="#home" class="active">HOME</a></li>
-            <li><a href="#about" class="">O MNIE</a></li>
-            <li><a href="#skills" class="">TECHNOLOGIE</a></li>
-            <li><a href="#portfolio" class="">PORTFOLIO</a></li>
-            <li><a href="#contact" class="">KONTAKT</a></li>
-        </ul>
+        <div class="navbar">
+            <ul class="nav-links">
+                <li class='active'><a href="#home">HOME</a></li>
+                <li><a href="#about">O MNIE</a></li>
+                <li><a href="#skills">TECHNOLOGIE</a></li>
+                <li><a href="#portfolio">PORTFOLIO</a></li>
+                <li><a href="#contact">KONTAKT</a></li>
+            </ul>
+        </div>
+
     </nav>
+
     <!--END NAVIGATION-->
 
     <!--HOME-->
-    <header id="home" class="main-header parallax one-page-section">
+    <header id="home" class="home main-header parallax one-page-section forJS">
         <div class="header-content">
             <div class="avatar-hero">
                 <img src="img/hero-image.jpg" alt="">
@@ -81,7 +79,7 @@
     <!--END HOME-->
 
     <!--ABOUT-->
-    <section id="about">
+    <section id="about" class='about forJS'>
         <div class="container">
             <span class="tag1">&lt;about&gt;</span>
             <div class="about-inner">
@@ -93,7 +91,7 @@
                     <p>Chcę robić w życiu to co lubię, czuć się spełnionym zawodowo oraz się rozwijać. Praca jako front
                         end deweloper daje mi wiele satysfakcji, lubie jak coś co napiszę "działa". </p>
                     <p>Jeśli to
-                        czytasz, proszę zapoznaj się z projektami, które wykonałem sam oraz, w których uczstniczyłem
+                        czytasz, proszę zapoznaj się z projektami, które wykonałem sam oraz, w których uczestniczyłem
                         w
                         ramach stacjonarnego bootcampa oraz kursów internetowych. Mam nadzieje, że dasz mi okazje do
                         zaprezentowania swoich obecnych umiejętności.</p>
@@ -153,7 +151,7 @@
     <!--END ABOUT-->
 
     <!--SKILLS-->
-    <section id="skills">
+    <section id="skills" class="skills forJS">
         <div class="container">
             <div class="section-title">
                 <h2>Technologie</h2>
@@ -248,86 +246,86 @@
     <!--END SKILLS-->
 
     <!--PORTFOLIO-->
-    <section id="portfolio">
+    <section id="portfolio" class='portfolio forJS'>
         <div class="container">
             <div class="section-title">
                 <h2>Projekty</h2>
                 <div class="underline"></div>
             </div>
             <span class="tag1">&lt;projects&gt;</span>
-                <div class="carousel">
-                    <div class="carousel-item">
-                        <div class="single-work">
-                            <a href="https://gnovac.github.io/psd-pax-template/"></a>
-                            <img class="effect" src="img/pax-template-image-min.jpg" alt="work-1">
-                            <div class="work-overlay effect">
-                                <h3>Pax Template</h3>
-                                <p>Projekt HTML/CSS/JS/RWD</p>
-                            </div>
-                            </a>
+            <div class="carousel">
+                <div class="carousel-item">
+                    <div class="single-work">
+                        <a href="https://gnovac.github.io/psd-pax-template/"></a>
+                        <img class="effect" src="img/pax-template-image-min.jpg" alt="work-1">
+                        <div class="work-overlay effect">
+                            <h3>Pax Template</h3>
+                            <p>Projekt HTML/CSS/JS/RWD</p>
                         </div>
-                    </div>
-
-                    <div class="carousel-item">
-                        <div class="single-work">
-                            <a href='https://gnovac.github.io/akademia-108-bootstrap-project/'></a>
-                            <img class="effect" src="img/bootstrap-project-min.jpg" alt="work-2">
-                            <div class="work-overlay effect">
-                                <h3>Bootstrap Project</h3>
-                                <p>Projekt oparty o frameworka Bootstrap</p>
-                            </div>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="carousel-item">
-                        <div class="single-work">
-                            <a href='https://gnovac.github.io/akademia-108-portfolio/'></a>
-                            <img class="effect" src="img/portfolio-project-min.jpg" alt="work-3">
-                            <div class="work-overlay effect">
-                                <h3>Portfolio Project</h3>
-                                <p>Projekt HTML/CSS/JS/RWD</p>
-                            </div>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="carousel-item">
-                        <div class="single-work">
-                            <a href='https://gnovac.github.io/ProGamers---Bootstrap---Udemy/'></a>
-                            <img class="effect" src="img/ProGamers-min.jpg" alt="work-4">
-                            <div class="work-overlay effect">
-                                <h3>ProGamers</h3>
-                                <p>Strona Bootstrapowa z kursu na Udemy</p>
-                            </div>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="carousel-item">
-                        <div class="single-work">
-                            <a href='https://gnovac.github.io/Tropical-Paradise---Flexbox---Udemy/'></a>
-                            <img class="effect" src="img/Tropical-Paradise-min.jpg" alt="work-2">
-                            <div class="work-overlay effect">
-                                <h3>Tropical Paradise</h3>
-                                <p>Strona oparta na flexboxie z kursu na Udemy</p>
-                            </div>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="carousel-item">
-                        <div class="single-work">
-                            <a href='https://gnovac.github.io/BEM-GRID-Page-Udemy/'></a>
-                            <img class="effect" src="img/GRID BEM Page-min.jpg" alt="work-6">
-                            <div class="work-overlay effect">
-                                <h3>Diamonds & Gold</h3>
-                                <p>Strona oparta na GRID i BEM z kursu na Udemy</p>
-                            </div>
-                            </a>
-                        </div>
+                        </a>
                     </div>
                 </div>
+
+                <div class="carousel-item">
+                    <div class="single-work">
+                        <a href='https://gnovac.github.io/akademia-108-bootstrap-project/'></a>
+                        <img class="effect" src="img/bootstrap-project-min.jpg" alt="work-2">
+                        <div class="work-overlay effect">
+                            <h3>Bootstrap Project</h3>
+                            <p>Projekt oparty o frameworka Bootstrap</p>
+                        </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="single-work">
+                        <a href='https://gnovac.github.io/akademia-108-portfolio/'></a>
+                        <img class="effect" src="img/portfolio-project-min.jpg" alt="work-3">
+                        <div class="work-overlay effect">
+                            <h3>Portfolio Project</h3>
+                            <p>Projekt HTML/CSS/JS/RWD</p>
+                        </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="single-work">
+                        <a href='https://gnovac.github.io/ProGamers---Bootstrap---Udemy/'></a>
+                        <img class="effect" src="img/ProGamers-min.jpg" alt="work-4">
+                        <div class="work-overlay effect">
+                            <h3>ProGamers</h3>
+                            <p>Strona Bootstrapowa z kursu na Udemy</p>
+                        </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="single-work">
+                        <a href='https://gnovac.github.io/Tropical-Paradise---Flexbox---Udemy/'></a>
+                        <img class="effect" src="img/Tropical-Paradise-min.jpg" alt="work-2">
+                        <div class="work-overlay effect">
+                            <h3>Tropical Paradise</h3>
+                            <p>Strona oparta na flexboxie z kursu na Udemy</p>
+                        </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="single-work">
+                        <a href='https://gnovac.github.io/BEM-GRID-Page-Udemy/'></a>
+                        <img class="effect" src="img/GRID BEM Page-min.jpg" alt="work-6">
+                        <div class="work-overlay effect">
+                            <h3>Diamonds & Gold</h3>
+                            <p>Strona oparta na GRID i BEM z kursu na Udemy</p>
+                        </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
             <span class="tag2">&lt;/projects&gt;</span>
         </div>
     </section>
@@ -338,7 +336,7 @@
     <!--    END GOOGLE MAP-->
 
     <!--CONTACT-->
-    <section id="contact">
+    <section id="contact" class="contact forJS">
         <div class="container">
             <div class="section-title">
                 <h2>Kontakt</h2>
