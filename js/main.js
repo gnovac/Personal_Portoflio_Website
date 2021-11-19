@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const burgerBars = document.querySelectorAll('.bars')
 
     const addShadow = () => {
-        if (window.scrollY >= 300) {
+        if (window.scrollY >= 200) {
             nav.classList.add('scrolled');
             navbar.classList.add('scroll');
             logo.style.color = '#000'
