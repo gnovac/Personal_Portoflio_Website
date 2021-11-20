@@ -1,0 +1,34 @@
+/*----------------------------------------
+keyframes animation
+----------------------------------------*/
+/*typewriter blinking cursor animation*/
+@keyframes dash {
+
+    0%,
+    100% {
+        color: transparent;
+    }
+
+    50% {
+        color: #bfbfbf;
+    }
+}
+
+
+
+/*mouse wheel scroller animation*/
+@keyframes scroll {
+    0% {
+        opacity: 0;
+    }
+
+    10% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(15px);
+        opacity: 0;
+    }
+}

@@ -1,0 +1,35 @@
+@media all and (max-width:1200px) {
+    .about-inner {
+        flex-flow: column;
+        width: 100%
+    }
+
+    .skills .section-title h2:after {
+        left: 40%
+    }
+
+    .portfolio .section-title h2:after {
+        left: 39%
+    }
+
+    .contact .section-title h2:after {
+        left: 43%;
+    }
+
+    .features-section {
+        width: 90%;
+        margin-bottom: 0;
+    }
+
+    .skills-inner {
+        width: 70%;
+    }
+
+    .single-service {
+        flex: 1 1 30%;
+    }
+
+    .contact-form {
+        width: 80%;
+    }
+}

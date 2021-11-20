@@ -5,19 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grzegorz Nowak | Portfolio Front End Developer Kraków</title>
-    <!--    Normalize CSS-->
-    <link rel="stylesheet" href="css/normalize.css">
-    <!--    slick styles-->
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-    <!--    Custom styles-->
-    <link rel="stylesheet" href="css/style.css">
-    <!--    Responsive custom styles-->
-    <link rel="stylesheet" href="css/responsive.css">
     <!--    Font Awesome -->
     <script src="https://kit.fontawesome.com/907ccae0c7.js" crossorigin="anonymous"></script>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:900|La+Belle+Aurore|Lato:400,400i,700,700i"
         rel="stylesheet">
+    <!--    slick styles-->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <!--    Custom styles-->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -261,9 +257,8 @@
                         <p class="work-text">Projekt HTML/CSS/JS/RWD</p>
                     </div>
                     <div class="work-footer">
-                        <a href="https://gnovac.github.io/psd-pax-template/"><i
+                        <a href="https://gnovac.github.io/psd-pax-template/" target="_blank"><i
                                 class="fas fa-external-link-alt"></i></a>
-                        <a href="#"><i class="fab fa-github"></i></i></a>
                     </div>
                 </div>
                 <div class="work">
@@ -273,9 +268,8 @@
                         <p class="work-text">Projekt oparty o Bootstrap</p>
                     </div>
                     <div class="work-footer">
-                        <a href="https://gnovac.github.io/akademia-108-bootstrap-project/"><i
+                        <a href="https://gnovac.github.io/akademia-108-bootstrap-project/" target="_blank"><i
                                 class="fas fa-external-link-alt"></i></a>
-                        <a href="#"><i class="fab fa-github"></i></i></a>
                     </div>
                 </div>
                 <div class="work">
@@ -285,9 +279,8 @@
                         <p class="work-text">Strona oparta na GRID i BEM z kursu na Udemy</p>
                     </div>
                     <div class="work-footer">
-                        <a href="https://gnovac.github.io/BEM-GRID-Page-Udemy/"><i
+                        <a href="https://gnovac.github.io/BEM-GRID-Page-Udemy/" target="_blank"><i
                                 class="fas fa-external-link-alt"></i></a>
-                        <a href="#"><i class="fab fa-github"></i></i></a>
                     </div>
                 </div>
                 <div class="work">
@@ -297,9 +290,8 @@
                         <p class="work-text">Projekt HTML/CSS/RWD</p>
                     </div>
                     <div class="work-footer">
-                        <a href="https://gnovac.github.io/akademia-108-portfolio/"><i
+                        <a href="https://gnovac.github.io/akademia-108-portfolio/" target="_blank"><i
                                 class="fas fa-external-link-alt"></i></a>
-                        <a href="#"><i class="fab fa-github"></i></i></a>
                     </div>
                 </div>
                 <div class="work">
@@ -309,9 +301,8 @@
                         <p class="work-text">Strona oparta o Bootstrap & SASS z kursu na Udemy</p>
                     </div>
                     <div class="work-footer">
-                        <a href="https://gnovac.github.io/ProGamers---Bootstrap---Udemy/"><i
+                        <a href="https://gnovac.github.io/ProGamers---Bootstrap---Udemy/" target="_blank"><i
                                 class="fas fa-external-link-alt"></i></a>
-                        <a href="#"><i class="fab fa-github"></i></i></a>
                     </div>
                 </div>
                 <div class="work">
@@ -321,9 +312,8 @@
                         <p class="work-text">Strona na flexboxie & SASS z kursu na Udemy</p>
                     </div>
                     <div class="work-footer">
-                        <a href="https://gnovac.github.io/Tropical-Paradise---Flexbox---Udemy/"><i
+                        <a href="https://gnovac.github.io/Tropical-Paradise---Flexbox---Udemy/" target="_blank"><i
                                 class="fas fa-external-link-alt"></i></a>
-                        <a href="#"><i class="fab fa-github"></i></i></a>
                     </div>
                 </div>
             </div>
@@ -332,9 +322,7 @@
     </section>
     <!--END PORTFOLIO-->
 
-    <!--    GOOGLE MAP-->
-    <div id="map"></div>
-    <!--    END GOOGLE MAP-->
+
 
     <!--CONTACT-->
     <section id="contact" class="contact forJS">
@@ -368,7 +356,7 @@
 
                 </div>
 
-                <form id="contact-form" method="post" action="https://formspree.io/grzesiek6493@gmail.com">
+                <form class="contact-form" method="post" action="https://formspree.io/grzesiek6493@gmail.com">
                     <div class="c-name">
                         <input type="text" name="imie" id="name" class="input-field" required="required"
                             placeholder="Nazwa">
@@ -385,7 +373,7 @@
                         <span class="message-error"></span>
                     </div>
 
-                    <div id="form-message" class="error"></div>
+                    <div class="form-message" class="error"></div>
                     <button type="submit" class="effect submit-btn">Wyślij</button>
                 </form>
             </div>
@@ -394,8 +382,12 @@
     </section>
     <!--END CONTACT-->
 
+    <!--    GOOGLE MAP-->
+    <div id="map"></div>
+    <!--    END GOOGLE MAP-->
+
     <!--FOOTER-->
-    <footer id="footer">
+    <footer id="footer" class="footer">
         <a href="index.html" class="effect footer-title">GNOVAC</a>
 
         <div class="footer-social">

@@ -1,0 +1,44 @@
+@media all and (max-width:992px) {
+    .main-header {
+        background-image: url(../img/header-bg-min.jpg);
+    }
+
+    .avatar-hero img {
+        width: 130px;
+        height: 130px;
+    }
+
+    .main-header .header-content h1 {
+        font-size: 36px;
+    }
+
+    .main-header .header-content h2 {
+        font-size: 20px;
+    }
+
+    .skills .section-title h2:after {
+        left: 37%
+    }
+
+    .portfolio .section-title h2:after {
+        left: 34%
+    }
+
+    .contact .section-title h2:after {
+        left: 40%;
+    }
+
+    .filtr-item {
+        width: 70%;
+    }
+
+    .contact-item {
+        flex-flow: column;
+    }
+
+    .contact-item .c-data {
+        margin: 0;
+        width: 280px;
+    }
+
+}

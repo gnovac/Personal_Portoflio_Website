@@ -9,19 +9,18 @@ $('.carousel').slick({
     responsive: [{
             breakpoint: 0,
             settings: {
-                dost: false,
+                dots: false,
                 slidesToShow: 1,
             }
         },
         {
-            breakpoint: 576,
+            breakpoint: 768,
             settings: {
-                dots: false,
                 slidesToShow: 2,
             }
         },
         {
-            breakpoint: 992,
+            breakpoint: 1200,
             settings: {
                 slidesToShow: 3,
             }
