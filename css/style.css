@@ -405,7 +405,7 @@ nav {
 .main-header .header-content h1 {
   color: #fff;
   font-size: 50px;
-  margin: 36px 0 22px;
+  margin: 20px;
   text-align: center;
 }
 
@@ -871,7 +871,7 @@ p {
   -webkit-box-direction: normal;
       -ms-flex-flow: row wrap;
           flex-flow: row wrap;
-  width: 60%;
+  width: 80%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -1047,12 +1047,6 @@ textarea.input-field {
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
   }
-  .navbar.overlay {
-    visibility: visible;
-    opacity: 1;
-    padding-top: 100px;
-    background: rgba(0, 0, 0, 0.9);
-  }
   .navbar li {
     list-style: none;
     display: block;
@@ -1062,6 +1056,12 @@ textarea.input-field {
     font-size: 28px;
     margin-bottom: 15px;
     text-decoration: none;
+  }
+  .navbar.overlay {
+    visibility: visible;
+    opacity: 1;
+    padding-top: 100px;
+    background: rgba(0, 0, 0, 0.9);
   }
   .nav-links {
     color: white;
@@ -1092,16 +1092,6 @@ textarea.input-field {
   .main-header {
     background-image: url(../img/header-bg-min.jpg);
   }
-  .avatar-hero img {
-    width: 130px;
-    height: 130px;
-  }
-  .main-header .header-content h1 {
-    font-size: 36px;
-  }
-  .main-header .header-content h2 {
-    font-size: 20px;
-  }
   .skills .section-title h2:after {
     left: 37%;
   }
@@ -1127,6 +1117,16 @@ textarea.input-field {
 }
 
 @media all and (max-width: 1200px) {
+  .main-header .header-content h1 {
+    font-size: 36px;
+  }
+  .main-header .header-content h2 {
+    font-size: 18px;
+  }
+  .avatar-hero img {
+    width: 130px;
+    height: 130px;
+  }
   .about-inner {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;

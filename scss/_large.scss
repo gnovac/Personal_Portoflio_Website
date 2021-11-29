@@ -1,19 +1,56 @@
 @media all and (max-width:1200px) {
+    .main-header {
+        .header-content {
+            h1 {
+                font-size: 36px;
+            }
+
+            h2 {
+                font-size: 18px;
+            }
+        }
+    }
+
+    .avatar-hero {
+        img {
+            width: 130px;
+            height: 130px;
+        }
+    }
+
     .about-inner {
         flex-flow: column;
-        width: 100%
+        width: 100%;
     }
 
-    .skills .section-title h2:after {
-        left: 40%
+    .skills {
+        .section-title {
+            h2 {
+                &:after {
+                    left: 40%;
+                }
+            }
+        }
     }
 
-    .portfolio .section-title h2:after {
-        left: 39%
+    .portfolio {
+        .section-title {
+            h2 {
+                &:after {
+                    left: 39%;
+                }
+            }
+        }
     }
 
-    .contact .section-title h2:after {
-        left: 43%;
+    .contact {
+        .section-title {
+            h2 {
+                &:after {
+                    left: 43%;
+                }
+            }
+        }
     }
 
     .features-section {
@@ -32,4 +69,5 @@
     .contact-form {
         width: 80%;
     }
+
 }

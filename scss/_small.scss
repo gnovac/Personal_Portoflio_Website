@@ -3,14 +3,16 @@
         background-image: url(../img/header-bg-min.jpg);
     }
 
-    .main-nav .toggle {
-        display: block;
-        margin-top: 8px;
-        margin-right: 15px;
-        background-color: transparent;
-        border: 1px solid transparent;
-        border-radius: 4px;
-        z-index: 20;
+    .main-nav {
+        .toggle {
+            display: block;
+            margin-top: 8px;
+            margin-right: 15px;
+            background-color: transparent;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            z-index: 20;
+        }
     }
 
     .navbar {
@@ -25,25 +27,25 @@
         padding-top: 20px;
         z-index: 10;
         transition: all 0.3s ease-in-out;
-    }
 
-    .navbar.overlay {
-        visibility: visible;
-        opacity: 1;
-        padding-top: 100px;
-        background: rgba(0, 0, 0, 0.9);
-    }
+        li {
+            list-style: none;
+            display: block;
 
-    .navbar li {
-        list-style: none;
-        display: block;
-    }
+            a {
+                display: block;
+                font-size: 28px;
+                margin-bottom: 15px;
+                text-decoration: none;
+            }
+        }
 
-    .navbar li a {
-        display: block;
-        font-size: 28px;
-        margin-bottom: 15px;
-        text-decoration: none;
+        &.overlay {
+            visibility: visible;
+            opacity: 1;
+            padding-top: 100px;
+            background: rgba(0, 0, 0, 0.9);
+        }
     }
 
     .nav-links {
@@ -56,16 +58,34 @@
         flex: 1 1 100%;
     }
 
-    .skills .section-title h2:after {
-        left: 34%
+    .skills {
+        .section-title {
+            h2 {
+                &:after {
+                    left: 34%
+                }
+            }
+        }
     }
 
-    .portfolio .section-title h2:after {
-        left: 30%
+    .portfolio {
+        .section-title {
+            h2 {
+                &:after {
+                    left: 30%
+                }
+            }
+        }
     }
 
-    .contact .section-title h2:after {
-        left: 38%;
+    .contact {
+        .section-title {
+            h2 {
+                &:after {
+                    left: 38%;
+                }
+            }
+        }
     }
 
     .filtr-item {

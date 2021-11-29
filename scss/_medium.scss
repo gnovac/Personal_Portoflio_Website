@@ -3,29 +3,34 @@
         background-image: url(../img/header-bg-min.jpg);
     }
 
-    .avatar-hero img {
-        width: 130px;
-        height: 130px;
+    .skills {
+        .section-title {
+            h2 {
+                &:after {
+                    left: 37%;
+                }
+            }
+        }
     }
 
-    .main-header .header-content h1 {
-        font-size: 36px;
+    .portfolio {
+        .section-title {
+            h2 {
+                &:after {
+                    left: 34%;
+                }
+            }
+        }
     }
 
-    .main-header .header-content h2 {
-        font-size: 20px;
-    }
-
-    .skills .section-title h2:after {
-        left: 37%
-    }
-
-    .portfolio .section-title h2:after {
-        left: 34%
-    }
-
-    .contact .section-title h2:after {
-        left: 40%;
+    .contact {
+        .section-title {
+            h2 {
+                &:after {
+                    left: 40%;
+                }
+            }
+        }
     }
 
     .filtr-item {
@@ -34,11 +39,10 @@
 
     .contact-item {
         flex-flow: column;
-    }
 
-    .contact-item .c-data {
-        margin: 0;
-        width: 280px;
+        .c-data {
+            margin: 0;
+            width: 280px;
+        }
     }
-
 }
