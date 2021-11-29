@@ -147,7 +147,7 @@ img {
 }
 
 .container {
-    padding: 100px 0;
+    padding: 50px 0;
     margin: 0 50px;
 }
 
@@ -164,7 +164,6 @@ nav {
     flex-flow: row wrap;
     justify-content: space-around;
     padding: 15px 0;
-    position: fixed;
     background-color: transparent;
     z-index: 20;
     transition: all .4s ease-in-out;
@@ -322,7 +321,7 @@ nav {
         justify-content: center;
         align-items: center;
         z-index: 10;
-        padding: 15vh 0;
+        margin: 15vh 10vh 0;
 
         h1 {
             color: #fff;
@@ -407,7 +406,7 @@ p {
     align-items: center;
     margin-left: auto;
     margin-right: auto;
-    width: 80%;
+    width: 90%;
 }
 
 .about-content {
@@ -769,12 +768,10 @@ p {
 }
 
 .contact-form {
-    margin-top: 50px;
+    margin: 50px auto;
     display: flex;
     flex-flow: row wrap;
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
+    width: 90%;
 }
 
 .c-name,
@@ -893,7 +890,7 @@ textarea {
             margin: 0 9px;
 
             &:hover {
-                color: #111;
+                color: $dark-blue;
             }
         }
     }

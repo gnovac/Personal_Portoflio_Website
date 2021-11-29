@@ -1,4 +1,9 @@
 @media all and (max-width:768px) {
+    .container {
+        padding: 50px 0;
+        margin: 0 25px;
+    }
+
     .main-header {
         background-image: url(../img/header-bg-min.jpg);
     }
@@ -91,9 +96,4 @@
     .filtr-item {
         width: 90%;
     }
-
-    .contact-form {
-        width: 100%;
-    }
-
 }

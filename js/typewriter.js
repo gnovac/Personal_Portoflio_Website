@@ -2,7 +2,6 @@
      Javascript for initialize text Typer
  --------------------------------------------*/
 'use strict'
-
 class TxtType {
     constructor(el, toRotate, period) {
         this.toRotate = toRotate;
@@ -64,5 +63,5 @@ function typewrite() {
 $(document).ready(function () {
     setTimeout(function () {
         typewrite();
-    }, 1500);
+    }, 300);
 });
