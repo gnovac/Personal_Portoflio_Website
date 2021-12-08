@@ -770,8 +770,8 @@ p {
 .contact-form {
     margin: 50px auto;
     display: flex;
-    flex-flow: row wrap;
-    width: 90%;
+    flex-flow: column;
+    width: 50%;
 }
 
 .c-name,
@@ -779,6 +779,8 @@ p {
 .c-msg {
     display: flex;
     flex-flow: column;
+    margin-bottom: 10px;
+    font-size: 18px;
 }
 
 .c-name,
@@ -790,46 +792,20 @@ p {
     flex: 1 1 100%;
 }
 
-input,
-textarea {
-    margin: 0 10px;
-}
-
 .input-field {
     padding: 12px 10px;
     color: #232323;
     border: 1px solid #ddd;
     outline: none;
+    font-size: 16px;
+    font-family: inherit;
 }
 
 textarea {
     &.input-field {
-        height: 190px;
+        height: 200px;
         resize: none;
     }
-}
-
-.name-error,
-.email-error,
-.message-error,
-.error {
-    display: block;
-    margin-top: 8px;
-    font-size: 14px;
-    color: #ff2828;
-    margin-bottom: 30px;
-    text-align: center;
-}
-
-.success {
-    display: block;
-    margin-top: 8px;
-    font-size: 14px;
-    color: #1e9402;
-}
-
-.form-message {
-    width: 100%;
 }
 
 .submit-btn {
@@ -838,6 +814,7 @@ textarea {
     padding: 8px 20px;
     font-size: 16px;
     font-weight: 700;
+    width: 100px;
     border: 2px solid $dark-gray;
     outline: none;
     background-color: $dark-gray;
@@ -905,7 +882,6 @@ textarea {
     }
 }
 
-// @import './extrasmall';
 @import './small';
 @import './medium';
 @import './large';

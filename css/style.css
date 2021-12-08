@@ -866,11 +866,11 @@ p {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
-  width: 90%;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  width: 50%;
 }
 
 .c-name,
@@ -883,6 +883,8 @@ p {
   -webkit-box-direction: normal;
       -ms-flex-flow: column;
           flex-flow: column;
+  margin-bottom: 10px;
+  font-size: 18px;
 }
 
 .c-name,
@@ -898,44 +900,18 @@ p {
           flex: 1 1 100%;
 }
 
-input,
-textarea {
-  margin: 0 10px;
-}
-
 .input-field {
   padding: 12px 10px;
   color: #232323;
   border: 1px solid #ddd;
   outline: none;
+  font-size: 16px;
+  font-family: inherit;
 }
 
 textarea.input-field {
-  height: 190px;
+  height: 200px;
   resize: none;
-}
-
-.name-error,
-.email-error,
-.message-error,
-.error {
-  display: block;
-  margin-top: 8px;
-  font-size: 14px;
-  color: #ff2828;
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-.success {
-  display: block;
-  margin-top: 8px;
-  font-size: 14px;
-  color: #1e9402;
-}
-
-.form-message {
-  width: 100%;
 }
 
 .submit-btn {
@@ -944,6 +920,7 @@ textarea.input-field {
   padding: 8px 20px;
   font-size: 16px;
   font-weight: 700;
+  width: 100px;
   border: 2px solid #333;
   outline: none;
   background-color: #333;
@@ -1111,6 +1088,9 @@ textarea.input-field {
   .contact-item .c-data {
     margin: 0;
     width: 280px;
+  }
+  .contact-form {
+    width: 100%;
   }
 }
 

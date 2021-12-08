@@ -21,7 +21,8 @@
 <body>
     <!--NAVIGATION BAR-->
     <nav class="main-nav">
-        <div class="logo"><a href="index-english.html"><i class="fa fa-hashtag logo" aria-hidden="true"><span>GN</span></i></a>
+        <div class="logo"><a href="index-english.html"><i class="fa fa-hashtag logo"
+                    aria-hidden="true"><span>GN</span></i></a>
         </div>
 
         <!--       Toogle class for mobile version-->
@@ -349,24 +350,22 @@
 
                 </div>
 
-                <form class="contact-form" method="post" action="https://formspree.io/grzesiek6493@gmail.com">
+                <form class="contact-form" method="POST" action="https://formspree.io/f/mayvyygp">
                     <div class="c-name">
-                        <input type="text" name="imie" id="name" class="input-field" required="required"
-                            placeholder="Name">
-                        <span class="name-error"></span>
+                        <label for="name">Full name</label>
+                        <input type="text" name="name" id="name" class="input-field" required="required"
+                            placeholder="First and Last">
                     </div>
                     <div class="c-email">
-                        <input type="email" name="Adres email" id="email" class="input-field" required="required"
-                            placeholder="Email">
-                        <span class="email-error"></span>
+                        <label for="email">Email Address</label>
+                        <input type="email" name="email" id="email" class="input-field" required="required"
+                            placeholder="email@domain.tld">
                     </div>
                     <div class="c-msg">
-                        <textarea name="wiadomość" id="message" class="input-field" required="required"
-                            placeholder="Message"></textarea>
-                        <span class="message-error"></span>
+                        <label for="message">Message</label>
+                        <textarea name="message" id="message" class="input-field" required="required"
+                            placeholder="Your Message"></textarea>
                     </div>
-
-                    <div class="form-message" class="error"></div>
                     <button type="submit" class="effect submit-btn">Send</button>
                 </form>
             </div>

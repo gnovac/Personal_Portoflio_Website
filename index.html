@@ -351,24 +351,22 @@
 
                 </div>
 
-                <form class="contact-form" method="post" action="https://formspree.io/grzesiek6493@gmail.com">
+                <form class="contact-form" method="POST" action="https://formspree.io/f/mayvyygp">
                     <div class="c-name">
-                        <input type="text" name="imie" id="name" class="input-field" required="required"
-                            placeholder="Nazwa">
-                        <span class="name-error"></span>
+                        <label for="name">Imię i nazwisko</label>
+                        <input type="text" name="name" id="name" class="input-field" required="required"
+                            placeholder="Imię i nazwisko">
                     </div>
                     <div class="c-email">
-                        <input type="email" name="Adres email" id="email" class="input-field" required="required"
-                            placeholder="Email">
-                        <span class="email-error"></span>
+                        <label for="email">Adres e-mail</label>
+                        <input type="email" name="email" id="email" class="input-field" required="required"
+                            placeholder="email@domain.tld">
                     </div>
                     <div class="c-msg">
-                        <textarea name="wiadomość" id="message" class="input-field" required="required"
-                            placeholder="Wiadomość"></textarea>
-                        <span class="message-error"></span>
+                        <label for="message">Wiadomość</label>
+                        <textarea name="message" id="message" class="input-field" required="required"
+                            placeholder="Twoja Wiadomość"></textarea>
                     </div>
-
-                    <div class="form-message" class="error"></div>
                     <button type="submit" class="effect submit-btn">Wyślij</button>
                 </form>
             </div>
